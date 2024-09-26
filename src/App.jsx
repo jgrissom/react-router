@@ -28,10 +28,20 @@ function App() {
           <Route path="home" element={<Home />} />
           <Route path="products" element={<Products />} />
           <Route path="about" element={<About />} />
+          <Route path="*" element={<NoMatch />} />
         </Routes>
       </div>
     </div>
   );
 }
+
+// components are not required to be placed in a separate file
+const NoMatch = () => {
+  return (
+    <div>
+      The path requested has <strong>NO MATCH</strong> page
+    </div>
+  );
+};
 
 export default App;
