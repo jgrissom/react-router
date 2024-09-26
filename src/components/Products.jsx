@@ -1,4 +1,5 @@
-function Products() {
+function Products(props) {
+  const { products } = props;
   return (
     <div>
       This is the <strong>PRODUCTS</strong> page
@@ -13,6 +14,11 @@ function Products() {
         tempus laoreet. Phasellus ut egestas mi. Morbi nec orci felis. Proin
         vulputate egestas felis, at eleifend est.
       </p>
+      <ul>
+        {products.map((p) => (
+          <li key={p.id}>{p.name}</li>
+        ))}
+      </ul>
     </div>
   );
 }

@@ -5,6 +5,11 @@ import About from "./components/About";
 import { Routes, Route, NavLink } from "react-router-dom";
 
 function App() {
+  const products = [
+    { id: 1, name: "Goldfish", price: 1.99 },
+    { id: 2, name: "Gummy Bears", price: 2.99 },
+    { id: 3, name: "Yarn", price: 3.99 },
+  ];
   const style = ({ isActive }) => ({
     fontWeight: isActive ? "bold" : "normal",
   });
@@ -26,7 +31,7 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
-          <Route path="products" element={<Products />} />
+          <Route path="products" element={<Products products={products} />} />
           <Route path="about" element={<About />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
