@@ -1,6 +1,8 @@
 import "./App.css";
 import Home from "./components/Home";
-import { NavLink } from "react-router-dom";
+import Products from "./components/Products";
+import About from "./components/About";
+import { Routes, Route, NavLink } from "react-router-dom";
 
 function App() {
   return (
@@ -12,7 +14,11 @@ function App() {
         <NavLink to="/about">About</NavLink>
       </nav>
       <div className="content">
-        <Home />
+        <Routes>
+          <Route path="home" element={<Home />} />
+          <Route path="products" element={<Products />} />
+          <Route path="about" element={<About />} />
+        </Routes>
       </div>
     </div>
   );
