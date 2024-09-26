@@ -10,7 +10,7 @@ function App() {
   });
   return (
     <div>
-      <h1>React Router</h1>
+      <h1>Super Cool Products for Sale!</h1>
       <nav>
         <NavLink to="/home" style={style}>
           Home
@@ -31,6 +31,9 @@ function App() {
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </div>
+      <h5 style={{ borderTop: "solid #333 1px" }}>
+        &copy; 2024 Super Cool Products, LLC
+      </h5>
     </div>
   );
 }
