@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-function Product() {
+function Product(props) {
   const { id } = useParams();
+  const { products } = props;
+  const idx = products.findIndex((p) => p.id === Number(id));
+  const product = products[idx];
   return (
     <div>
       This is the <strong>PRODUCT</strong> page
@@ -16,7 +19,10 @@ function Product() {
         consequat felis vitae eros bibendum laoreet.
       </p>
       <div>
-        <strong>Id</strong>: {id}
+        <strong>Name</strong>: {product.name}
+        <br />
+        <strong>Price</strong>: {product.price}
+        <br />
         <p>
           <Link to="/products">Back to Products Page</Link>
         </p>
