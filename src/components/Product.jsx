@@ -18,15 +18,21 @@ function Product(props) {
         lorem. Aenean dignissim magna sit amet arcu mattis imperdiet. Etiam
         consequat felis vitae eros bibendum laoreet.
       </p>
-      <div>
-        <strong>Name</strong>: {product.name}
-        <br />
-        <strong>Price</strong>: {product.price}
-        <br />
-        <p>
-          <Link to="/products">Back to Products Page</Link>
-        </p>
-      </div>
+      {product ? (
+        <div>
+          <strong>Name:</strong> {product.name}
+          <br />
+          <strong>Price:</strong> {product.price}
+          <br />
+        </div>
+      ) : (
+        <div>
+          The product requested has <strong>NO MATCH</strong>
+        </div>
+      )}
+      <p>
+        <Link to="/products">Back to Products Page</Link>
+      </p>
     </div>
   );
 }
