@@ -24,6 +24,7 @@ function App() {
       </nav>
       <div className="content">
         <Routes>
+          <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="products" element={<Products />} />
           <Route path="about" element={<About />} />
